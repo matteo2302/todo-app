@@ -1,18 +1,25 @@
 import './App.css';
 import Todoform from './Todoform';
 import { useState } from 'react';
+import Todolist from './Todolist';
 
 function App() {
 
-  let [task, setTask] = useState(["prima task"]);
-
+  let [tasks, setTasks] = useState([]);
+  let aggiungiTask = (newTask) => {
+  if (newTask !== ""){
+    let updatedtasks = {id : Date.now(), task: newTask};
+    setTasks([...tasks, updatedtasks]);
+    console.log(tasks)
+  }
+}
 
 
   return (
     <div className="App">
     <h1>TODO LIST</h1>
-    <Todoform />
-     <p>{task}</p>
+    <Todoform aggiungiTask={aggiungiTask}/>
+    <Todolist tasks={tasks} />
     </div>
   );
 }
