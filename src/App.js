@@ -10,7 +10,6 @@ function App() {
   if (newTask !== ""){
     let updatedtasks = {id : Date.now(), task: newTask};
     setTasks([...tasks, updatedtasks]);
-    console.log(tasks)
   }
 }
 let rimuoviTask = (id) => {

@@ -5,7 +5,6 @@ let [newTask, setNewTask] = useState("");
 const handleSubmit = (e) => {
   e.preventDefault();
   if(newTask.trim() !== ""){
-    console.log(newTask);
     aggiungiTask(newTask);
     setNewTask("");
   }};
