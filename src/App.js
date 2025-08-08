@@ -13,15 +13,17 @@ function App() {
     console.log(tasks)
   }
 }
+let rimuoviTask = (id) => {
+  setTasks(tasks.filter((t)=> t.id !== id));
 
-
+}
   return (
     <div className="App">
     <h1>TODO LIST</h1>
     <Todoform aggiungiTask={aggiungiTask}/>
-    <Todolist tasks={tasks} />
+    <Todolist tasks={tasks} rimuoviTask={rimuoviTask}/>
     </div>
   );
-}
 
+}
 export default App;
